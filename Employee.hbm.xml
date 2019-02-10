@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD X.X//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-
+X.X.dtd">
+<hibernate-mapping>
+	<class name="com.persistentClasses.Employee" table="employee">
+		<id name="id" type="long" column="id">
+			<generator class="increment" />
+		</id>
+		<property column="firstName" name="firstName" />
+		<property column="salary" name="salary" />
+		<many-to-one name="department" class="com.persistentClasses.Department" >
+			<column name="department" />
+		</many-to-one>
+		<!-- other property mapping -->
+	</class>
+</hibernate-mapping>
